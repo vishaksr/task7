@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail foreach</title>
+
+</head>
+<body>
+    <h1 align="center">open console in inspect to view the output</h1>
+    <script>
+        var request= new XMLHttpRequest();
+        request.open("GET","https://restcountries.com/v3.1/all","true");
+        request.send();
+        request.onload=function(){
+            var countryData =JSON.parse(this.response);
+            countryData.array.forEach((country) => 
+            {
+                console.log("name:", country.name.common);
+                
+                console.log("captial:", country.captial[0]);
+                console.log("flag:", country.flags.png);
+            });
+        }
+    </script>
+    
+</body>
+</html>

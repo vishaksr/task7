@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASIAN COUNTRIES</title>
+
+</head>
+<body>
+    <h1 align="center">OPEN CONSOLE in inspect to view the output</h1>
+    <script>
+        fetch("https://restcountries.com/v3.1/all")
+        .then((response)=> response.json())
+        .then((data)=>{
+            const asiacountries=data.filter((country)=> country.region === "Asia");
+            console.log("countries is Asia:",asiacountries);
+        })
+        
+    </script>
+    
+</body>
+</html>
